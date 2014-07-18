@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'playlists/index'
+  resources :playlists
+  root 'playlists#index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :admins
