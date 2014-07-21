@@ -1,0 +1,43 @@
+<h5><%= @song.artist%>, <%= @song.year%>, <%= @song.place%></h5>
+	
+		<% @artistimg.each do |aimage| %>
+		
+		
+			<div style="display:inline-block;"><img src='<%=aimage["unescapedUrl"]%>' style="height:102px; width:102px;display:inline-block"></div>
+			<% end %>			
+		
+		<% @cityimg.each do |cimage| %>
+			<div style="display:inline-block;"><img src='<%=cimage["unescapedUrl"]%>' style="height:102px; width:102px;display:inline-block">
+			</div>
+			 
+		
+		<% end %>
+
+		<% @fashionimg.each do |fimage| %>
+			<div style="display:inline-block;"><img src='<%=fimage["unescapedUrl"]%>' style="height:102px; width:102px;display:inline-block">
+			</div>
+			 
+		
+		<% end %>
+
+
+		<% @artimg.each do |aimage| %>
+			<div style="display:inline-block;"><img src='<%=aimage["unescapedUrl"]%>' style="height:102px; width:102px;display:inline-block">
+			</div>
+			 
+		
+		<% end %>
+
+		<% @filmimg.each do |fimage| %>
+			<div style="display:inline-block;"><img src='<%=fimage["unescapedUrl"]%>' style="height:102px; width:102px;display:inline-block">
+			</div>
+			 
+		
+		<% end %>
+
+		<% for youtube in @youtube %>
+		<div style="display:inline-block;">
+           <iframe width:"120px" src='<%= "http://www.youtube.com/embed/#{youtube}" %>' frameborder="0" allowFullScreen ></iframe>
+   		</div>
+        <% end %>
+

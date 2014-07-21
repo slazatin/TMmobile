@@ -1,11 +1,17 @@
-<h1>Playlists#index</h1>
-<p>Find me in app/views/playlists/index.html.erb</p>
-<%@playlists.each do |playlist|%>
 
-<h3><%= playlist.name%></h3><br>
-	<%playlist.songs.each do |s|%>
-	<%=s.title%>-
-	<%=s.artist%><br>
-	<%s.year%><br>
+<h1>Playlists</h1>
+<table class="table table-condensed">
+	<tr>
+		<th>Playlist</th>
+	</tr>
+	<%@playlists.each do |p|%>
+	<tr>
+	
+		<td><%=link_to p.name, playlist_path(p)%></td>
+
+	</tr>
 	<%end%>
-<%end%>
+	
+</table>
+
+
