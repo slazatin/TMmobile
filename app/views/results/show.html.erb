@@ -1,4 +1,7 @@
-<h5 style="display:inline-block;"><%= @song.artist%>, <%= @song.year%>, <%= @song.place%></h5>
+  <%=link_to "", playlists_path, class: "logo", style: "display:inline-block;"%>
+  <div class="headtitle">
+  <h4 id="title"> <%= @song.place%>, <%= @song.year%> </h5>
+  </div>
 	
 		<% @artistimg.each do |aimage| %><div style="display:inline-block; width:50%"><img src='<%=aimage["unescapedUrl"]%>' style="height:155px; width:100% ;display:inline-block"></div><% end %>
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube.first}" %>' frameborder="0" allowFullScreen ></iframe></div>			
@@ -17,5 +20,8 @@
 
 		<% @filmimg.each do |fimage| %><div style="display:inline-block; width:50%"><img src='<%=fimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></div><% end %>
 
-		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube[4]}" %>' frameborder="0" allowFullScreen ></iframe></div>	
+		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube[4]}" %>' frameborder="0" allowFullScreen ></iframe></div>
+ 
+
+
 

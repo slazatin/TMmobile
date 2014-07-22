@@ -17,4 +17,31 @@
 
  @import "bootstrap";
 
+ .headtitle{
+ 	
+ 	background-color: rgba(255, 255, 255, 0.8);
+ 	position:fixed;
+ 	width:100%;
+ 	text-align: center;
+
+
+ 	#title{
+ 		display:inline-block;
+
+ 		padding-bottom:5px;
+ 	}
+ }
+
+ .logo{
+ 	margin-top: 5px;
+	margin-left: 5px;
+ 	z-index:99999;
+ 	position:fixed;
+ 	text-align: left;
+ 	width:40px;
+ 	height:35px;
+ 	background-size:cover;
+ 	background-image:url("LogoT.png");
+ }
+
 
