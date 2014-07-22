@@ -1,5 +1,16 @@
-<h1><%=@playlist.name%></h1>
+  <%=link_to "", playlists_path, class: "logo", style: "display:inline-block;"%>
+  <div class="headtitle">
+  <h4 id="title"> tunesmap </h4>
+  </div>
+
+<div class="content">
+
+<hr style="margin-bottom: 10px; margin-top:-3px;">
+<h4 style="text-align:center;"><%=@playlist.name%></h4>
+
 <table class="table table-condensed">
+
+
 	<tr>
 		<th>Title</th>
 		<th>Artist</th>
@@ -15,3 +26,4 @@
 	<%end%>
 	
 </table>
+</div>
