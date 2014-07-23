@@ -2,29 +2,27 @@
   <div class="headtitle">
   <h4 id="title"> <%= @song.place%>, <%= @song.year%> </h5>
   </div>
-	
+
 <div class="content">
 		
-		<% @artistimg.each do |aimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=aimage["unescapedUrl"]%>'><img src='<%=aimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
+		<% @artistimg.each do |aimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=aimage["unescapedUrl"]%>' title='<%=aimage["contentNoFormatting"]%>'><img src='<%=aimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube.first}" %>' frameborder="0" allowFullScreen ></iframe></div>			
 		
-		<% @cityimg.each do |cimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=cimage["unescapedUrl"]%>'><img src='<%=cimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
+		<% @cityimg.each do |cimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=cimage["unescapedUrl"]%>' title='<%=cimage["contentNoFormatting"]%>'><img src='<%=cimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
 
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube[1]}" %>' frameborder="0" allowFullScreen ></iframe></div>	
 
-		<% @fashionimg.each do |fimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=fimage["unescapedUrl"]%>'><img src='<%=fimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
+		<% @fashionimg.each do |fimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=fimage["unescapedUrl"]%>' title='<%=fimage["contentNoFormatting"]%>'><img src='<%=fimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
 
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube[2]}" %>' frameborder="0" allowFullScreen ></iframe></div>	
 
 
-		<% @artimg.each do |aimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=aimage["unescapedUrl"]%>'><img src='<%=aimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
+		<% @artimg.each do |aimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=aimage["unescapedUrl"]%>' title='<%=aimage["contentNoFormatting"]%>'><img src='<%=aimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube[3]}" %>' frameborder="0" allowFullScreen ></iframe></div>	
 
-		<% @filmimg.each do |fimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=fimage["unescapedUrl"]%>'><img src='<%=fimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
+		<% @filmimg.each do |fimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=fimage["unescapedUrl"]%>' title='<%=fimage["contentNoFormatting"]%>'><img src='<%=fimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
 
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube[4]}" %>' frameborder="0" allowFullScreen ></iframe></div>
-
-<a class="fancybox" rel="group" href='<%=@artistimg.first["unescapedUrl"]%>'><img src='<%=@artistimg.first["unescapedUrl"]%>' alt="" /></a>
 
 		</div>
 
