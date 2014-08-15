@@ -16,6 +16,8 @@ class ResultsController < ApplicationController
     @artimg = Song.google_image("'getty images' + #{@song.year} + 'art'" )
     @filmimg = Song.google_image("'getty images' + #{@song.year} + 'film music poster'" )
     @youtube = Song.youtube("#{@song.artist} + #{@song.year}" )
+    @getty= Song.getty("Beck")
+    @rhapsody = Song.rhapsody("Rancid")
   end
 
   def destroy

@@ -36,6 +36,7 @@ gem 'devise'
 gem 'rails_admin'
 gem 'google_image_api'
 gem 'youtube_search'
+gem 'httparty'
 
 # Use unicorn as the app server
 # gem 'unicorn'

@@ -15,7 +15,8 @@ function addToMural() {
   </div>
 
 <div class="content">
-
+		<p><%=@getty%></p>
+		<p><%=@rhapsody.first%></p>
 		<div id="content2" style="width:300px; height:300px; display:none; background-color:white;" ondblclick="addToMural()"><h1>Hello World</h1></div>
 		<% @artistimg.each do |aimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=aimage["unescapedUrl"]%>' title='<%=aimage["contentNoFormatting"]%>'><img src='<%=aimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block" ondblclick="addToMural()"></a></div><% end %>
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube.first}" %>' frameborder="0" allowFullScreen ></iframe></div>			
