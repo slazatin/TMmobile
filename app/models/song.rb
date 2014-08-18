@@ -18,6 +18,7 @@ class Song < ActiveRecord::Base
 	def self.youtube(query)
 		# Grabs the first 5 ids from the results of our youtube search
 		youtube_results	= YoutubeSearch.search(query).map { |value| value["video_id"] }.take(8)
+		youtube_results
 	end
 
 	def self.rhapsody(query)
@@ -47,26 +48,17 @@ class Song < ActiveRecord::Base
 	end 
 
 	def self.getty(search)
-		# # If no movie specified, use The Matrix
-		# movie ||= "matrix"
 
-		# Authentication key for rotton tomatoes -- put yours in:
-		  # Adds to end of URL ?apikey=<YOURKEY>&q=<MOVIE>
-		 auth = { query: { ApiKey:"eh88967e94ehv2vm7rgggfb5"}}
-		search_url = "https://connect.gettyimages.com/v3/search/images?phrase=#{search}"
+		auth = {headers: {'Api-Key'=>"eh88967e94ehv2vm7rgggfb5"}}
+		search_url ="https://connect.gettyimages.com:443/v3/search/images/editorial?phrase=#{search}&fields=detail_set&editorial_segments=archival&sort_order=most_popular"
 
-		# "https://connect.gettyimages.com/v3/search/images/editorial?phrase=#{search}"
 
-# curl -i -H "Api-Key:eh88967e94ehv2vm7rgggfb5" "https://connect.gettyimages.com/v3/search/images?phrase=Beck"
+		#"https://connect.gettyimages.com/v3/search/images/editorial?phrase=#{search}"
+
+		# curl -i -H "Api-Key:eh88967e94ehv2vm7rgggfb5" "https://connect.gettyimages.com/v3/search/images?phrase=Beck"
 		response = HTTParty.get search_url, auth
-		response
+		response.parsed_response["images"]
 
-		# response.parsed_response["movies"]
-
-		# auth = { query: { apikey: 'pjz23qq9uhq7tfwzd7r7xw9r' }}
-		
-		# id = # INSERT CODE HERE: Get the value of 'movies' 0 'id' in the nested response hash
-		# 		 # HINT: It should be something like this: response['stuff'][1]['morestuff']
 
 	
 	end

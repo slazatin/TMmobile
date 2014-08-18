@@ -6,18 +6,15 @@ function addToMural() {
 }
 
   </script>
-
-
-
   <%=link_to "", playlists_path, class: "logo", style: "display:inline-block;"%>
   <div class="headtitle">
   <h4 id="title" ondblclick="addToMural()"> <%= @song.place%>, <%= @song.year%> </h5>
   </div>
+  <div class="content">
+  <%@getty.each do |g|%><div style="display:inline-block; width:50%"><%g["display_sizes"].each do |gi|%><%if gi["is_watermarked"]==false%><img src='<%=gi["uri"]%>' style="height:155px;width:100% ;display:inline-block" ondblclick="addToMural()"></div>
+<%end%><%end%><%end%>
+<p><%=@rhapsody.first%></p><div id="content2" style="width:300px; height:300px; display:none; background-color:white;" ondblclick="addToMural()"><h1>Hello World</h1></div>
 
-<div class="content">
-		<p><%=@getty%></p>
-		<p><%=@rhapsody.first%></p>
-		<div id="content2" style="width:300px; height:300px; display:none; background-color:white;" ondblclick="addToMural()"><h1>Hello World</h1></div>
 		<% @artistimg.each do |aimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=aimage["unescapedUrl"]%>' title='<%=aimage["contentNoFormatting"]%>'><img src='<%=aimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block" ondblclick="addToMural()"></a></div><% end %>
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube.first}" %>' frameborder="0" allowFullScreen ></iframe></div>			
 		

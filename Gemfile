@@ -37,6 +37,7 @@ gem 'rails_admin'
 gem 'google_image_api'
 gem 'youtube_search'
 gem 'httparty'
+gem "typhoeus"
 
 # Use unicorn as the app server
 # gem 'unicorn'
