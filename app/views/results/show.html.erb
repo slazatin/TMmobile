@@ -11,7 +11,7 @@ function addToMural() {
   <h4 id="title" ondblclick="addToMural()"> <%= @song.place%>, <%= @song.year%> </h5>
   </div>
   <div class="content">
-  <%@getty.each do |g|%><div style="display:inline-block; width:50%"><%g["display_sizes"].each do |gi|%><%if gi["is_watermarked"]==false%><a class="fancybox" rel="group" href='<%=gi["uri"]%>' title='<%=g["caption"]%>'><img src='<%=gi["uri"]%>' style="height:155px;width:100% ;display:inline-block" ondblclick="addToMural()"></a></div>
+  <%@getty.each do |g|%><div style="display:inline-block; width:49.3%"><%g["display_sizes"].each do |gi|%><%if gi["is_watermarked"]==false%><a class="fancybox" rel="group" href='<%=gi["uri"]%>' title='<%=g["caption"]%>'><img src='<%=gi["uri"]%>' style="height:155px;width:100% ;display:inline-block" ondblclick="addToMural()"></a></div>
 <%end%><%end%><%end%>
 <p><%=@rhapsody.first%></p><div id="content2" style="width:300px; height:300px; display:none; background-color:white;" ondblclick="addToMural()"><h1>Hello World</h1></div>
 

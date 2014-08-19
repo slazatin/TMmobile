@@ -16,7 +16,7 @@ class ResultsController < ApplicationController
     @artimg = Song.google_image("'getty images' + #{@song.year} + 'art'" )
     @filmimg = Song.google_image("'getty images' + #{@song.year} + 'film music poster'" )
     @youtube = Song.youtube("#{@song.artist} + #{@song.year}" )
-    @getty= Song.getty("Beatles")
+    @getty= Song.getty("#{@song.year}+%20+ #{@song.artist}".downcase.gsub(" ", "%20"))
     @rhapsody = Song.rhapsody("Rancid")
   end
 
