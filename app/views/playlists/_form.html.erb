@@ -1,0 +1,8 @@
+<%= form_for @search do |f| %>
+
+<%= f.text_field :query, id: "searchbox", 
+placeholder: "DMX" %>
+
+<%= f.submit "Search", :style => "visibility: hidden"%>
+
+<%end%>
