@@ -1,17 +1,18 @@
   <script>
 function addToMural() {
-  var content = document.getElementById("content2");
-  console.log("fuck")
+  var content = document.getElementById("save");
   content.style.display = "block";
+  
 }
+
 
   </script>
   <%=link_to "", playlists_path, class: "logo", style: "display:inline-block;"%>
   <div class="headtitle">
-  <h4 id="title" ondblclick="addToMural()"> <%= @song.place%>, <%= @song.year%> </h5>
+  <h4 id="title" > <%= @song.place%>, <%= @song.year%> </h5>
   </div>
-  <div class="content"><% @getty.each do |g| %><%g["display_sizes"].each do |gi|%><%if gi["is_watermarked"]==false%><div style="display:inline-block; width:50%; font-size:0em;border:1px solid white;"><a class="fancybox" rel="group" href='<%=gi["uri"]%>' title='<%=g["caption"]%>'><img src='<%=gi["uri"]%>' style="height:155px;width:100% ;display:inline-block;" ondblclick="addToMural()"></a></div><%end%><%end%><%end%>
-		<% @artistimg.each do |aimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=aimage["unescapedUrl"]%>' title='<%=aimage["contentNoFormatting"]%>'><img src='<%=aimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block" ondblclick="addToMural()"></a></div><% end %>
+  <div class="content" onscroll="addToMural()"><div id="save"></div><% @getty.each do |g| %><%g["display_sizes"].each do |gi|%><%if gi["is_watermarked"]==false%><div style="display:inline-block; width:50%; font-size:0em;border:1px solid white;"><a class="fancybox" rel="group" href='<%=gi["uri"]%>' title='<%=g["caption"]%>'><img src='<%=gi["uri"]%>' style="height:155px;width:100% ;display:inline-block;"></a></div><%end%><%end%><%end%>
+		<% @artistimg.each do |aimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=aimage["unescapedUrl"]%>' title='<%=aimage["contentNoFormatting"]%>'><img src='<%=aimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block" onscroll="addToMural()"></a></div><% end %>
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube.first}?showinfo=0" %>' frameborder="0" allowFullScreen ></iframe></div>			
 		
 		<% @cityimg.each do |cimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=cimage["unescapedUrl"]%>' title='<%=cimage["contentNoFormatting"]%>'><img src='<%=cimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
@@ -29,7 +30,7 @@ function addToMural() {
 		<% @filmimg.each do |fimage| %><div style="display:inline-block; width:50%"><a class="fancybox" rel="group" href='<%=fimage["unescapedUrl"]%>' title='<%=fimage["contentNoFormatting"]%>'><img src='<%=fimage["unescapedUrl"]%>' style="height:155px;width:100% ;display:inline-block"></a></div><% end %>
 
 		<div style="display:inline-block; width:100%"><iframe style ="width:100%;" src='<%= "http://www.youtube.com/embed/#{@youtube[4]}?showinfo=0" %>' frameborder="0" allowFullScreen ></iframe></div>
-		<p><%=@rhapsody.first%></p><div id="content2" style="width:300px; height:300px; display:none; background-color:white;" ondblclick="addToMural()"><h1>Hello World</h1></div>
+		<p><%=@rhapsody.first%></p><div id="content2" style="width:300px; height:300px; display:none; background-color:white;" ondblclick="addToMural()"></div>
 
 		</div>
 
